@@ -8,14 +8,18 @@ const Footer = () => {
         level={5}
         style={{ color: "white", textAlign: "center" }}
       >
-        Copyright © 2021
-        <Link to="/">Cryptoverse Inc.</Link> <br />
-        All Rights Reserved.
+        Copyright © 2023
+        <div>
+          <Link to="/">CryptoWizards Inc.</Link> <br />
+          <br /> All Rights Reserved.
+        </div>
       </Typography.Title>
       <Space>
-        <Link to="/">Home</Link>
-        <Link to="/exchanges">Exchanges</Link>
-        <Link to="/news">News</Link>
+        <div className="foot-pad">
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+        </div>
       </Space>
     </div>
   );
