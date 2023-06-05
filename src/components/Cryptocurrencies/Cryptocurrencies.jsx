@@ -3,7 +3,6 @@ import millify from "millify";
 import { Link } from "react-router-dom";
 import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
-import { motion } from "framer-motion";
 import Loading from "../Loading/Loading";
 
 const Cryptocurrencies = ({ simplified }) => {
@@ -30,41 +29,35 @@ const Cryptocurrencies = ({ simplified }) => {
         </div>
       )}
 
-      <motion.div
-        initial={{ opacity: "0" }}
-        animate={{ opacity: "1" }}
-        exit={{ opacity: "0" }}
-      >
-        <Row gutter={[32, 32]} className="crypto-card-container">
-          {filteredCryptos.map((currency, index) => (
-            <Col
-              xs={24}
-              sm={12}
-              lg={6}
-              className="crypto-card"
-              key={`${currency.name}-${index}`}
-            >
-              <Link to={`/crypto/${currency.id}`}>
-                <Card
-                  title={`${currency.rank}. ${currency.name}`}
-                  extra={
-                    <img
-                      className="crypto-image"
-                      src={currency.iconUrl}
-                      alt={currency.name}
-                    />
-                  }
-                  hoverable
-                >
-                  <p>Price: {millify(currency.price)}/</p>
-                  <p>Market Cap: {millify(currency.marketCap)}/</p>
-                  <p>Daily Change: {millify(currency.change)}%/</p>
-                </Card>
-              </Link>
-            </Col>
-          ))}
-        </Row>
-      </motion.div>
+      <Row gutter={[32, 32]} className="crypto-card-container">
+        {filteredCryptos.map((currency, index) => (
+          <Col
+            xs={24}
+            sm={12}
+            lg={6}
+            className="crypto-card"
+            key={`${currency.name}-${index}`}
+          >
+            <Link to={`/crypto/${currency.id}`}>
+              <Card
+                title={`${currency.rank}. ${currency.name}`}
+                extra={
+                  <img
+                    className="crypto-image"
+                    src={currency.iconUrl}
+                    alt={currency.name}
+                  />
+                }
+                hoverable
+              >
+                <p>Price: {millify(currency.price)}/</p>
+                <p>Market Cap: {millify(currency.marketCap)}/</p>
+                <p>Daily Change: {millify(currency.change)}%/</p>
+              </Card>
+            </Link>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };
