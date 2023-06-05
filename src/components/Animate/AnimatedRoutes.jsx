@@ -13,6 +13,7 @@ import {
   Cryptodetails,
   News,
 } from "../../components";
+import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = () => {
   const [activeRoute, setActiveRoute] = useState("");
@@ -24,13 +25,15 @@ const AnimatedRoutes = () => {
   useLocation(handleRouteChange);
 
   return (
-    <Routes location={location} key={location.pathname}>
-      <Route exact path="/" element={<Homepage />} />
-      <Route exact path="/exchanges" element={<Exchanges />} />
-      <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />
-      <Route exact path="/crypto/:coinId" element={<Cryptodetails />} />
-      <Route exact path="/news" element={<News />} />
-    </Routes>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/exchanges" element={<Exchanges />} />
+        <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />
+        <Route exact path="/crypto/:coinId" element={<Cryptodetails />} />
+        <Route exact path="/news" element={<News />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 
