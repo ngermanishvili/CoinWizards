@@ -382,8 +382,8 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   perspective: 500px;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 250px;
 }
 
 .cube {
@@ -445,4 +445,35 @@ a:hover {
   padding: 50px;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
+}
+
+.statistic {
+  position: absolute;
+  right: 0px;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  letter-spacing: 1px;
+}
+
+.flex-row2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wizards {
+  width: 250px;
+  height: 60px;
+}
+
+.foot-pad {
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+
 }
