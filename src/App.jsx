@@ -1,8 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
-import Navbar from "./components/Navbar/Navbar";
+import { Layout } from "antd";
+import { Navbar, Footer } from "./components";
 import "./App.css";
+import AnimatedRoutes from "./components/Animate/AnimatedRoutes";
+import Header from "./components/Navbar/Header";
+import Stats from "./components/Stats/Stats";
 
 const App = () => {
   return (
@@ -10,8 +12,18 @@ const App = () => {
       <div className="navbar">
         <Navbar />
       </div>
-      <div className="main"></div>
-      <div className="footer"></div>
+
+      <div className="main">
+        {/* <Header /> */}
+        <Layout>
+          <div className="routes">
+            <AnimatedRoutes />
+          </div>
+        </Layout>
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 };
