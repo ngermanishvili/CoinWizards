@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import Loading from "../Loading/Loading";
+import Owl from "../Carousel/Carousel";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -28,7 +29,7 @@ const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
-
+      {/* <Owl /> */}
       <Row gutter={[32, 32]} className="crypto-card-container">
         {filteredCryptos.map((currency, index) => (
           <Col
