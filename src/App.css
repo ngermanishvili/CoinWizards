@@ -483,3 +483,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+
+.carus {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+
+}
