@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,22 +16,16 @@ import {
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = () => {
-  const [activeRoute, setActiveRoute] = useState("");
-
-  const handleRouteChange = (location) => {
-    setActiveRoute(location.pathname);
-  };
-
-  useLocation(handleRouteChange);
+  const location = useLocation();
 
   return (
     <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/exchanges" element={<Exchanges />} />
-        <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />
-        <Route exact path="/crypto/:coinId" element={<Cryptodetails />} />
-        <Route exact path="/news" element={<News />} />
+      <Routes location={location}>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/exchanges" element={<Exchanges />} />
+        <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+        <Route path="/crypto/:coinId" element={<Cryptodetails />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </AnimatePresence>
   );
