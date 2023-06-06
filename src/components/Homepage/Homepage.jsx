@@ -10,6 +10,8 @@ import Box from "../Animate/Box";
 import Loading from "../Loading/Loading";
 import Stats from "../Stats/Stats";
 import { Stats2, Stats3 } from "../Stats/Stats";
+import Owl from "../Carousel/Carousel";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -56,6 +58,7 @@ const Homepage = () => {
         <Box />
       </Row>
       {/* // *? Cryptocurrencies section */}
+      <Owl />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Top 10 Cryptocurrencies in the World
@@ -65,17 +68,21 @@ const Homepage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
+
       <Cryptocurrencies simplified={true} />
+
+      {/* <ProgressBar /> */}
       <div className="home-heading-container">
         {/* //*? News section News Section} */}
-        <Title level={2} className="home-title">
+        {/* <Title level={2} className="home-title">
           Latest Crypto News
         </Title>
+
         <Title level={2} className="show-more">
-          <Link to="/news">Show More</Link>
-        </Title>
+          <Link to="/news">Show More .. </Link>
+        </Title> */}
       </div>
-      <News simplified />
+      {/* <News simplified /> */}
     </>
   );
 };
