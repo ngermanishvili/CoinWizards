@@ -176,8 +176,12 @@ a:hover {
 
 .coin-details-heading {
   font-weight: 700 !important;
-  margin-top: 20px !important;
+  margin-top: 50px !important;
   color: var(--pink) !important;
+}
+
+.about-row{
+  margin-bottom: 200px;
 }
 
 .coin-stats {
@@ -243,7 +247,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border);
-  padding: 20px;
+padding: 2px;
 }
 
 .link-name {
