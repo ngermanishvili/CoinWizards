@@ -15,11 +15,13 @@ const App = () => {
 
       <div className="main">
         {/* <Header /> */}
+
         <Layout>
           <div className="routes">
             <AnimatedRoutes />
           </div>
         </Layout>
+
         <div className="footer">
           <Footer />
         </div>
