@@ -14,7 +14,12 @@ import {
   NumberOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
-import { useGetCryptoDetailsQuery } from "../../services/cryptoApi";
+import {
+  useGetCryptoDetailsQuery,
+  useGetCryptoHistoryQuery,
+} from "../../services/cryptoApi";
+import LineChart from "../LineChart/LineChart";
+import Loading from "../Loading/Loading";
 
 const { Title, Text } = Typography;
 const { Option } = Select; // Add this line
@@ -22,11 +27,17 @@ const { Option } = Select; // Add this line
 const Cryptodetails = () => {
   // this coinid is undefined becouse we are not passing it in the url so if we want to fix this issue we have to pass it in the url for example /crypto/bitcoin and then we can get the coinid from the url to give it dinamicly to the title of the page we need to use the useParams hook from react-router-dom
   const { coinId } = useParams();
-  const [timePeri, setTimePeri] = useState("7d");
+  const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data: coinHistory } = useGetCryptoHistoryQuery({
+    coinId,
+    timePeriod,
+  });
   const cryptoDetails = data?.data?.coin;
 
   console.log(data);
+
+  if (isFetching) return <Loading />;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -112,13 +123,18 @@ const Cryptodetails = () => {
         defaultValue="7d"
         className="select-timeperiod"
         placeholder="Select Time Period"
-        onChange={(value) => setTimePeri(value)}
+        onChange={(value) => setTimePeriod(value)}
       >
         {time?.map((date) => (
           <Option key={date}>{date}</Option>
         ))}
       </Select>
       {/* {Lin e of charts} */}
+      <LineChart
+        coinHistory={coinHistory}
+        currentPrice={millify(cryptoDetails?.price)}
+        coinName={cryptoDetails?.name}
+      />
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
