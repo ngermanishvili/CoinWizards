@@ -18,20 +18,15 @@ export const cryptoApi = createApi({
         getCryptoDetails: builder.query({
             query: (coinId) => createRequest(`/coin/${coinId}`)
         }),
+        getCryptoHistory: builder.query({
+            query: ({ coinId, timeperiod }) => createRequest(`coin/${coinId}/history?timeperiod=${timeperiod}`),
+          }),
     })
+
 });
 
 export const {
-    useGetCryptosQuery, useGetCryptoDetailsQuery
+    useGetCryptosQuery, useGetCryptoDetailsQuery, useGetCryptoHistoryQuery
 } = cryptoApi;
 
 
-
-// const options = {
-//     method: 'GET',
-//     url: 'https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/exchanges',
-//     headers: {
-//       'X-RapidAPI-Key': 'b581486147msh03f2501cbe6ddb9p17995ejsn9ffe9eadd322',
-//       'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
-//     }
-//   };
