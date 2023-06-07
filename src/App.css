@@ -180,7 +180,7 @@ a:hover {
   color: var(--pink) !important;
 }
 
-.about-row{
+.about-row {
   margin-bottom: 200px;
 }
 
@@ -247,7 +247,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border);
-padding: 2px;
+  padding: 2px;
 }
 
 .link-name {
@@ -495,6 +495,26 @@ padding: 2px;
   padding: 0 20px;
   margin-top: 50px;
   margin-bottom: 50px;
-  
+}
 
+.auth {
+  width: 100%;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.auth-container {
+  background-color: #000;
+  width: 100%;
+  height: 40vh;
+}
+
+.auth-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
