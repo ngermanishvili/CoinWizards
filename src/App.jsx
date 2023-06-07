@@ -22,7 +22,7 @@ const App = () => {
         </Layout>
 
         <div className="footer">
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </div>
