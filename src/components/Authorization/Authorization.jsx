@@ -9,8 +9,9 @@ import {
   Card,
   Typography,
 } from "antd";
-
 import authImage from "../images/backgr.jpg";
+import authImage2 from "../images/auth.png";
+import styled from "styled-components";
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -48,13 +49,16 @@ const Authorization = () => {
 
   return (
     <>
-      <div>
+      <Wrapper>
         <Card className="auth-container">
           <img className="auth" src={authImage} alt="authImage" />
         </Card>
         <Title level={2} className="auth-title">
-                Comin soon... stay tuned!
-            </Title>
+          Comin soon... stay tuned!
+        </Title>
+        <Card className="authCard">
+          <img className="authImage2" src={authImage2} alt="authimage" />
+        </Card>
         <Form
           className="form"
           {...formItemLayout}
@@ -82,9 +86,8 @@ const Authorization = () => {
               },
             ]}
           >
-            <Input disabled /> {/* Disable the input field */}
+            <Input disabled />
           </Form.Item>
-          <Col></Col>
           <Form.Item
             name="password"
             label="Password"
@@ -164,24 +167,6 @@ const Authorization = () => {
           </Form.Item>
 
           <Form.Item
-            name="donation"
-            label="Donation"
-            rules={[
-              { required: true, message: "Please input donation amount!" },
-            ]}
-          >
-            <Input disabled />
-          </Form.Item>
-
-          <Form.Item
-            name="intro"
-            label="Intro"
-            rules={[{ required: true, message: "Please input Intro" }]}
-          >
-            <Input disabled />
-          </Form.Item>
-
-          <Form.Item
             name="gender"
             label="Gender"
             rules={[{ required: true, message: "Please select gender!" }]}
@@ -231,21 +216,93 @@ const Authorization = () => {
             ]}
             {...tailFormItemLayout}
           >
-            <Input disabled />
             <Checkbox disabled>
               I have read the <a href="">agreement</a>
             </Checkbox>
           </Form.Item>
           <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">
+            <Button className="btn-1" type="primary">
+              Login
+            </Button>
+            <Button className="btn-2" type="primary" htmlType="submit">
               Register
             </Button>
           </Form.Item>
+
           {/* Rest of the form items... */}
         </Form>
-      </div>
+      </Wrapper>
     </>
   );
 };
+
+const Wrapper = styled.div`
+  .authImage2 {
+    display: flex;
+    width: 400px;
+  }
+  .authCard {
+    display: flex;
+    max-width: 400px;
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    right: 50px;
+    top: 60%;
+  }
+
+  .auth-container {
+    background-color: #000;
+    width: 100%;
+  }
+
+  .auth {
+    width: 100%;
+    height: 34vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+
+  .auth-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 600px;
+    width: 100%;
+  }
+
+  .btn-2 {
+    margin-left: 10px;
+    max-width: 120px;
+    width: 100%;
+  }
+  .btn-1 {
+    background-color: #ae5757;
+  }
+  @media screen and (max-width: 800px) {
+    .authImage2 {
+      display: none;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      max-height: 1200px;
+      width: 100%;
+      height: 108vh;
+    }
+  }
+  ,
+ 
+`;
 
 export default Authorization;
