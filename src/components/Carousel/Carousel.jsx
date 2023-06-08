@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Radio } from "antd";
+import Cards from "../Cards/Cards";
 
 const contentStyle = {
   height: "160px",
@@ -41,15 +42,14 @@ const Owl = () => {
 
   return (
     <>
+      <Cards />
+
       <div className="carus">
         <Radio.Group
           onChange={handlePositionChange}
           value={dotPosition}
           style={{ marginBottom: 8 }}
-        >
-          <Radio.Button value="top">Top</Radio.Button>
-          <Radio.Button value="left">Left</Radio.Button>
-        </Radio.Group>
+        ></Radio.Group>
         <Carousel
           dotPosition={dotPosition}
           autoplay
