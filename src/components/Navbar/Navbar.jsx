@@ -3,6 +3,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import coinWizards from "../images/wizard2.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function Navbar() {
       <header className="header">
         <div className="header__content">
           <Link to="/" className="header__content__logo">
-            CryptoWizzards
+            <img className="logo" src={coinWizards} alt="coinwizards" />
           </Link>
           <nav
             className={`${"header__content__nav"} 
@@ -47,23 +48,23 @@ function Navbar() {
           >
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">მთავარი</Link>
               </li>
               <li>
-                <Link to="/exchanges">Exchanges</Link>
+                <Link to="/exchanges">გაცვლა</Link>
               </li>
               <li>
-                <Link to="/news">News</Link>
+                <Link to="/news">სიახლეები</Link>
               </li>
               <li>
-                <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+                <Link to="/cryptocurrencies">კრიპტოვალუტები</Link>
               </li>
 
               <Link to="/Login">
-                <button className="btn">Login</button>
+                <button className="btn">შესვლა</button>
               </Link>
               <Link to="/Authorization">
-                <button className="btn btn__login">Register</button>
+                <button className="btn btn__login">რეგისტრაცია </button>
               </Link>
             </ul>
           </nav>
@@ -91,6 +92,10 @@ const Wrapper = styled.div`
     z-index: 100;
     text-transform: uppercase;
   }
+  .logo {
+    width: 60%;
+    height: 60px;
+  }
   ,
   .header__content {
     overflow: hidden;
@@ -105,7 +110,7 @@ const Wrapper = styled.div`
     z-index: 100;
   }
   .header__content__logo {
-    font-size: 2rem;
+    font-size: 16px;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
@@ -126,7 +131,7 @@ const Wrapper = styled.div`
     backdrop-filter: blur(6px);
     transform: translate(0);
     transition: 0.3s ease transform;
-    color: #fff
+    color: #fff;
   }
   ,
   .header__content__nav ul {
@@ -145,7 +150,7 @@ const Wrapper = styled.div`
   .header__content__nav ul li a {
     text-decoration: none;
     color: inherit;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 12px;
     transition: 0.3s ease all;
   }
@@ -208,7 +213,6 @@ const Wrapper = styled.div`
       padding: 0 3rem;
     }
 
-    
     .header__content__nav {
       transform: none;
       flex-direction: row;
@@ -234,7 +238,6 @@ const Wrapper = styled.div`
       display: none;
     }
   }
-
 `;
 
 export default Navbar;
