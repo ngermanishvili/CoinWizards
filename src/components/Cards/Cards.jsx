@@ -31,7 +31,7 @@ const Cards = () => (
           avatar={
             <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
           }
-          title="Card title"
+          title="Basic 28$"
         />
         <br />
         <TimelineText />
@@ -56,7 +56,7 @@ const Cards = () => (
           avatar={
             <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
           }
-          title="Card title"
+          title="Premium 40$"
         />
         <br />
         <TimelineText />
@@ -81,7 +81,7 @@ const Cards = () => (
           avatar={
             <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
           }
-          title=""
+          title="Ultimate 56$"
         />
         <br />
         <TimelineText />
