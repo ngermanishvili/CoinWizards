@@ -7,11 +7,11 @@ const TimelineText = () => (
     items={[
       {
         color: "green",
-        children: "Buy Bitcoin at $30,000 - June 1, 2023",
+        children: "1-3 signals per day",
       },
       {
         color: "green",
-        children: "Buy Ethereum at $2,000 - June 3, 2023",
+        children: "detail analysis of the coin",
       },
       {
         color: "red",
