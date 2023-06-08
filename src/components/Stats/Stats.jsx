@@ -30,7 +30,7 @@ export const Stats2 = () => (
   <Space direction="vertical" style={{ width: "100%" }}>
     <Alert
       message="Crypto Signal"
-      description="თორნიკე გამოგვიყლეცდა ძმებოოო !"
+      description="Ethereum showing positive trends! For more information, click here."
       type="warning"
     />
   </Space>
@@ -40,7 +40,7 @@ export const Stats3 = () => (
   <Space direction="vertical" style={{ width: "100%" }}>
     <Alert
       message="Crypto Signal"
-      description="თორნიკე გამოგვიყლეცდა ძმებოოო !"
+      description="Exercise caution with Dogecoin! Join our Discord server for more information. "
       type="error"
     />
   </Space>
