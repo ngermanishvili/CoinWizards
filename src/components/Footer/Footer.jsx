@@ -1,5 +1,6 @@
 import { Typography, Space } from "antd";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import SocLink from "../SocLink/SocLink";
 
 const Footer = () => {
   return (
@@ -20,6 +21,7 @@ const Footer = () => {
           <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
         </div>
+        <SocLink />
       </Space>
     </div>
   );
