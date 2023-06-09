@@ -42,7 +42,7 @@ const Owl = () => {
 
   return (
     <>
-      <Cards />
+ 
 
       <div className="carus">
         <Radio.Group
