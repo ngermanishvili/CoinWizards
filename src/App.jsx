@@ -3,24 +3,23 @@ import { Layout } from "antd";
 import { Navbar, Footer } from "./components";
 import "./App.css";
 import AnimatedRoutes from "./components/Animate/AnimatedRoutes";
-import Header from "./components/Navbar/Header";
-import Stats from "./components/Stats/Stats";
+import Banner from "./components/Banner/Banner"; // Import Banner0 component
+import { Banner01DataSource } from "./data/data.source";
 
 const App = () => {
   return (
     <div className="app">
       <div className="navbar">
         <Navbar />
+        <Banner dataSource={Banner01DataSource} />
       </div>
       <div className="main">
         {/* <Header /> */}
-
         <Layout>
           <div className="routes">
             <AnimatedRoutes />
           </div>
         </Layout>
-
         <div className="footer">
           <Footer />
         </div>
