@@ -91,7 +91,7 @@ const Cards = () => (
 );
 
 const Wrapper = styled.div`
-margin-top: 100px;   
+margin-top: 600px;   
   display: flex;
   justify-content: center;
   align-items: center;
