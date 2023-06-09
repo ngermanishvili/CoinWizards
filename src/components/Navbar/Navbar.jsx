@@ -59,10 +59,9 @@ function Navbar() {
               <li>
                 <Link to="/cryptocurrencies">კრიპტოვალუტები</Link>
               </li>
-
-              <Link to="/Login">
-                <button className="btn">შესვლა</button>
-              </Link>
+              <li>
+                <Link to="/about">ჩვენს შესახებ</Link>
+              </li>
               <Link to="/Authorization">
                 <button className="btn btn__login">რეგისტრაცია </button>
               </Link>
