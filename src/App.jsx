@@ -1,20 +1,28 @@
 import React from "react";
 import { Layout } from "antd";
+import { useLocation } from "react-router-dom"; // Import the useLocation hook
 import { Navbar, Footer } from "./components";
 import "./App.css";
 import AnimatedRoutes from "./components/Animate/AnimatedRoutes";
-import Banner from "./components/Banner/Banner"; // Import Banner0 component
+import Banner from "./components/Banner/Banner";
 import { Banner01DataSource } from "./data/data.source";
 
 const App = () => {
+  const location = useLocation(); // Get the current location
+
+  // Check if the current location is the homepage ("/")
+  const isHomePage = location.pathname === "/";
+
   return (
     <div className="app">
       <div className="navbar">
         <Navbar />
-        <Banner dataSource={Banner01DataSource} />
       </div>
+
+      {/* Render the Banner component only on the homepage */}
+      {isHomePage && <Banner dataSource={Banner01DataSource} />}
+
       <div className="main">
-        {/* <Header /> */}
         <Layout>
           <div className="routes">
             <AnimatedRoutes />
