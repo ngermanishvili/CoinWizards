@@ -104,13 +104,13 @@ export const Banner01DataSource = {
   textWrapper: { className: "banner0-text-wrapper" },
   title: {
     className: "banner0-title",
-    children: "https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png",
+    children: "https://i.ibb.co/PG53QN0/Group-1.png",
   },
   content: {
     className: "banner0-content",
-    children: "CoinWizard - პირველი ქართული კრიპტო ვალუტის პლატფორმა",
+    children: "პირველი ქართული კრიპტო სივრცე  ",
   },
-  
+
   button: { className: "banner0-button", children: "მეტის გაგება" },
 };
 
@@ -127,7 +127,6 @@ export const Banner02DataSource = {
   },
   button: { className: "banner0-button", children: "Learn More" },
 };
-
 
 export const Content00DataSource = {
   wrapper: { className: "home-page-wrapper content0-wrapper" },
