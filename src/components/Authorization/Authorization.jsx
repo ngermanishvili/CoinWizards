@@ -9,7 +9,7 @@ import {
   Card,
   Typography,
 } from "antd";
-import authImage from "../images/backgr.jpg";
+import authImage from "../images/crypto.png";
 import authImage2 from "../images/auth.png";
 import styled from "styled-components";
 
@@ -50,14 +50,11 @@ const Authorization = () => {
   return (
     <>
       <Wrapper>
-        <Card className="auth-container">
-          <img className="auth" src={authImage} alt="authImage" />
-        </Card>
         <Title level={2} className="auth-title">
           Comin soon... stay tuned!
         </Title>
         <Card className="authCard">
-          <img className="authImage2" src={authImage2} alt="authimage" />
+          {/* <img className="authImage2" src={authImage2} alt="authimage" /> */}
         </Card>
         <Form
           className="form"
@@ -252,8 +249,15 @@ const Wrapper = styled.div`
   }
 
   .auth-container {
-    background-color: #000;
+    background-color: transparent;
     width: 100%;
+    margin-left: 0; /* Remove the left margin */
+    margin-bottom: 0; /* Remove the bottom margin */
+    position: fixed; /* Position the container fixed */
+    top: 100px; /* Position it at the top */
+    left: 0; /* Position it at the left */
+    z-index: 2; 
+    opacity: 0.5;
   }
 
   .auth {
