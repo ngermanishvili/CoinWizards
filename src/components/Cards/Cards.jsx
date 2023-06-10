@@ -15,41 +15,19 @@ const cardsData = [
       "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
   },
   {
-    id: 1,
+    id: 2,
     title: "Basic 28$",
     avatarSrc: "https://xsgames.co/randomusers/avatar.php?g=pixel",
     imageSrc:
       "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
   },
   {
-    id: 1,
+    id: 3,
     title: "Basic 28$",
     avatarSrc: "https://xsgames.co/randomusers/avatar.php?g=pixel",
     imageSrc:
       "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
   },
-  {
-    id: 1,
-    title: "Basic 28$",
-    avatarSrc: "https://xsgames.co/randomusers/avatar.php?g=pixel",
-    imageSrc:
-      "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
-  },
-  {
-    id: 1,
-    title: "Basic 28$",
-    avatarSrc: "https://xsgames.co/randomusers/avatar.php?g=pixel",
-    imageSrc:
-      "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
-  },
-  {
-    id: 1,
-    title: "Basic 28$",
-    avatarSrc: "https://xsgames.co/randomusers/avatar.php?g=pixel",
-    imageSrc:
-      "https://support.trailingcrypto.com/wp-content/uploads/2021/08/Crypto-Signals-1-1024x576.jpg",
-  },
-  // Add more card data objects here
 ];
 
 const Cards = () => (
@@ -58,7 +36,12 @@ const Cards = () => (
       {cardsData.map((card) => (
         <Col xs={24} sm={12} md={8} key={card.id}>
           <Card
-            style={{ maxWidth: 350, width: "100%" }}
+            style={{
+              maxWidth: 350,
+              width: "100%",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
             cover={<img alt="example" src={card.imageSrc} />}
           >
             <Meta avatar={<Avatar src={card.avatarSrc} />} title={card.title} />
