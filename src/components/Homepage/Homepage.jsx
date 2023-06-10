@@ -27,8 +27,6 @@ const Homepage = () => {
 
   return (
     <>
-  
-      
       {/* // *? Cryptocurrencies section */}
       {/* <Banner dataSource={Banner01DataSource}  /> */}
       <Wrapper>
