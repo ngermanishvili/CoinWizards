@@ -13,7 +13,6 @@ import {
   Cryptodetails,
   News,
   About,
-
 } from "../../components";
 import { AnimatePresence } from "framer-motion";
 import Authorization from "../Authorization/Authorization";
