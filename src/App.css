@@ -21,8 +21,6 @@ a:hover {
   flex-direction: column;
 }
 
-
-
 .main {
   width: 100%;
 }
@@ -102,6 +100,16 @@ a:hover {
 .coin-heading-container .coin-name {
   font-weight: 900;
   color: var(--pink);
+}
+.navbar {
+  height: 50px;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 
 .coin-heading-container p {
@@ -446,4 +454,3 @@ a:hover {
   align-items: center;
   margin-top: 20px;
 }
-
