@@ -82,20 +82,23 @@ function Navbar() {
 
 const Wrapper = styled.div`
   .header {
-    background: rgb(0, 21, 41);
-    width: 100%;
-    height: 100px;
-    padding: 0 1.5rem;
-    transition: 0.3s ease all;
-    position: fixed;
-    z-index: 100;
-    text-transform: uppercase;
+    background: #000;
+   width: 100%;
+ z-index: 1;
+ box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  top: 0; */
   }
   .logo {
-    width: 60%;
-    height: 60px;
+    display: inline-block;
+   position: relative;
+   width: 150px;
+   line-height: 64px;
   }
+
+ 
   ,
+
   .header__content {
     overflow: hidden;
     color: #fff;
@@ -119,7 +122,7 @@ const Wrapper = styled.div`
     right: 100%;
     bottom: 0;
     width: 100%;
-    height: 100 vh;
+    height: 100vh;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -147,22 +150,21 @@ const Wrapper = styled.div`
 
   ,
   .header__content__nav ul li a {
+    font-size: 14px;
+   color: rgba(255, 255, 255, 0.75);
+    margin-left: 46px;
+    padding: 0 8px;
     text-decoration: none;
-    color: inherit;
-    padding: 0.5rem 0.8rem;
-    border-radius: 12px;
-    transition: 0.3s ease all;
   }
 
-  ,
   .header__content__nav .btn {
     cursor: pointer;
     outline: none;
-    padding: 0.75rem 1.25rem;
+    padding: 0.45rem 1.30rem;
     border-radius: 12px;
     font-size: 1rem;
     font-family: inherit;
-    background: rgb(162, 162, 246);
+    background: transparent;
     color: rgb(32, 32, 32);
     border: 1px solid transparent;
     transition: 0.3s ease all;
