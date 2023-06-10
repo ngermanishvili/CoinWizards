@@ -36,11 +36,11 @@ function Navbar() {
 
   return (
     <Wrapper>
+      <Link to="/">
+        <img className="logo" src={coinWizards} alt="coinwizards" />
+      </Link>
       <header className="header">
         <div className="header__content">
-          <Link to="/" className="header__content__logo">
-            <img className="logo" src={coinWizards} alt="coinwizards" />
-          </Link>
           <nav
             className={`${"header__content__nav"} 
           ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
@@ -62,9 +62,12 @@ function Navbar() {
               <li>
                 <Link to="/about">ჩვენს შესახებ</Link>
               </li>
-              <Link to="/Authorization">
+              <li>
+                <Link to="/dictionary">ლექსიკონი</Link>
+              </li>
+              {/* <Link to="/Authorization">
                 <button className="btn btn__login">რეგისტრაცია </button>
-              </Link>
+              </Link> */}
             </ul>
           </nav>
           <div className="header__content__toggle">
@@ -91,12 +94,13 @@ const Wrapper = styled.div`
   }
   .logo {
     display: inline-block;
-   position: relative;
-   width: 150px;
-   line-height: 64px;
+position: absolute;
+top: 10px;
+left: 10px;
+z-index: 100;
+   width: 160px;
+   line-height: 70px;
   }
-
- 
   ,
 
   .header__content {
@@ -116,6 +120,7 @@ const Wrapper = styled.div`
     font-weight: bold;
     text-decoration: none;
     color: #fff;
+    
   }
   .header__content__nav {
     top: 0;
@@ -202,6 +207,7 @@ const Wrapper = styled.div`
     font-size: 2rem;
     transition: 0.3s ease all;
     position: relative;
+    margin-left: 20rem;
   }
 
   .header__content__toggle:hover {
@@ -237,7 +243,12 @@ const Wrapper = styled.div`
 
     .header__content__toggle {
       display: none;
+      position: absolute;
+      
     }
+  .navbar{
+   display: flex;
+  }
   }
 `;
 
