@@ -35,18 +35,20 @@ const News = ({ simplified }) => {
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            <Option value="Cryptocurrency">Cryptocurrency</Option>
+            <Option key="Cryptocurrency" value="Cryptocurrency">
+              Cryptocurrency
+            </Option>
 
             {data?.data?.coins?.map((currency) => (
-              <Option key={currency.id} value={currency.name}>
+              <Option key={currency.uuid} value={currency.name}>
                 {currency.name}
               </Option>
             ))}
           </Select>
         </Col>
       )}
-      {cryptoNews.value.map((news, i) => (
-        <Col xs={24} sm={12} lg={8} key={i}>
+      {cryptoNews.value.map((news) => (
+        <Col xs={24} sm={12} lg={8} key={news.uuid}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noopener noreferrer">
               <div className="news-image-container">
