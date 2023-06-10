@@ -16,6 +16,7 @@ import {
 } from "../../components";
 import { AnimatePresence } from "framer-motion";
 import Authorization from "../Authorization/Authorization";
+import Dictionary from "../Dictionary/Dictionary";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -30,6 +31,8 @@ const AnimatedRoutes = () => {
         <Route path="/news" element={<News />} />
         <Route path="/about" element={<About />} />
         <Route path="/authorization" element={<Authorization />} />
+        <Route path="/dictionary" element={<Dictionary />} />
+        <Route path="/dictionary/:id" element={<Dictionary />} />
       </Routes>
     </AnimatePresence>
   );
