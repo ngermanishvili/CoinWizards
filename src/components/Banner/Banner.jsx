@@ -5,6 +5,7 @@ import QueueAnim from "rc-queue-anim";
 import TweenOne from "rc-tween-one";
 import { isImg } from "../utils/utils";
 import styled from "styled-components";
+import Cards from "../Cards/Cards";
 
 const Banner = (props) => {
   const { dataSource, ...currentProps } = props;
@@ -51,6 +52,7 @@ const Banner = (props) => {
       >
         <DownOutlined />
       </TweenOne>
+      \
     </Wrapper>
   );
 };
@@ -63,7 +65,7 @@ const Wrapper = styled.div`
   border-color: #666;
   background-image: url("https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg");
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
 
   & .banner0-text-wrapper {
@@ -95,8 +97,11 @@ const Wrapper = styled.div`
   & .banner0-content {
     margin-bottom: 20px;
     word-wrap: break-word;
-    min-height: 24px;
+    min-height: 32px;
+    font-size: 28px;
+    color: #fff;
   }
+
 
   & .banner0-button {
     border: 1px solid #fff;
@@ -126,11 +131,11 @@ const Wrapper = styled.div`
 
   & .banner0-icon {
     bottom: 20px;
-    font-size: 24px;
+    font-size: 32px;
     position: absolute;
     left: 50%;
     margin-left: -12px;
-    color: @template-text-color-light;
+    color: #fff;
   }
 
   @media screen and (max-width: 767px) {
