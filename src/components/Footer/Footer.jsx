@@ -14,11 +14,7 @@ const StyledFooter = styled(AntFooter)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <Menu mode="horizontal" theme="dark">
-        <Menu.Item key="home">Home</Menu.Item>
-        <Menu.Item key="about">About</Menu.Item>
-        <Menu.Item key="contact">Contact</Menu.Item>
-      </Menu>
+      <p>©2021 Created by Crypto Signals</p>
     </StyledFooter>
   );
 };
