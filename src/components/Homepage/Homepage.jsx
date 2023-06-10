@@ -15,8 +15,8 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import styled from "styled-components";
 import Cards from "../Cards/Cards";
 
-// import Banner from "../Banner/Banner";
-// import { Banner01DataSource } from "../../data/data.source";
+import Banner from "../Banner/Banner";
+import { Banner01DataSource } from "../../data/data.source";
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -27,61 +27,23 @@ const Homepage = () => {
 
   return (
     <>
-      {/* <Wrapper>
-        <Title level={2} className="heading">
-          GLOBAL CRYPTO STATS
-        </Title>
-        <Row>
-          <Col span={14}>
-            <Stats3 />
-            <div className="flex-row">
-              <Statistic
-                title="Total Cryptocurrencies"
-                value={globalStats.total}
-              />
-              <Statistic
-                title="Total Exchanges"
-                value={millify(globalStats.totalExchanges)}
-              />
-
-              <Statistic
-                title="Total Market Cap"
-                value={millify(globalStats.totalMarketCap)}
-              />
-            </div>
-            <div className="flex-row2">
-              <Statistic
-                title="Total 24h Volume"
-                value={millify(globalStats.total24hVolume)}
-              />
-
-              <Statistic
-                title="Total Markets"
-                value={millify(globalStats.totalMarkets)}
-              />
-            </div>
-          </Col>
-          <Box />
-        </Row> */}
-
+  
+      
       {/* // *? Cryptocurrencies section */}
-
-      <Cards />
-
-      <Owl />
-      <div className="home-heading-container">
-        <Title level={2} className="home-title">
-          Top 10 Cryptocurrencies in the World
-        </Title>
-
-        <Title level={2} className="show-more">
-          <Link to="/cryptocurrencies">Show More</Link>
-        </Title>
-      </div>
+      {/* <Banner dataSource={Banner01DataSource}  /> */}
       <Wrapper>
-        <Title level={2} className="heading">
-          GLOBAL CRYPTO STATS
+        <Title level={2} className="home-title2">
+          გაიარე კონსულტაცია და შეიძინე კრიპტო სიგნალები ყველაზე დაბალ ფასად !
         </Title>
+
+        <Cards />
+
+        <div className="home-heading-container">
+          <Title level={2} className="home-title">
+            გლობალური (LIVE) სტატისტიკა
+          </Title>
+        </div>
+
         <Row>
           <Col span={14}>
             <Stats3 />
@@ -116,22 +78,43 @@ const Homepage = () => {
         </Row>
 
         <Cryptocurrencies simplified={true} />
-
-        {/* <ProgressBar /> */}
-        <div className="home-heading-container">
-          {/* //*? News section News Section} */}
-          {/* <Title level={2} className="home-title">
-          Latest Crypto News
-        </Title>
-
-        <Title level={2} className="show-more">
-          <Link to="/news">Show More .. </Link>
-        </Title> */}
-        </div>
       </Wrapper>
     </>
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .home-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .home-title {
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  .home-title2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .flex-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    letter-spacing: 1px;
+    margin-top: 40px;
+  }
+  .white-statistic {
+    color: white;
+  }
+
+  .flex-row2 {
+    display: flex;
+    justify-content: space-around;
+  }
+`;
 export default Homepage;
