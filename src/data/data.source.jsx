@@ -108,10 +108,27 @@ export const Banner01DataSource = {
   },
   content: {
     className: "banner0-content",
+    children: "CoinWizard - პირველი ქართული კრიპტო ვალუტის პლატფორმა",
+  },
+  
+  button: { className: "banner0-button", children: "მეტის გაგება" },
+};
+
+export const Banner02DataSource = {
+  wrapper: { className: "banner0" },
+  textWrapper: { className: "banner0-text-wrapper" },
+  title: {
+    className: "banner0-title",
+    children: "",
+  },
+  content: {
+    className: "banner0-content",
     children: "一个高效的页面动画解决方案",
   },
   button: { className: "banner0-button", children: "Learn More" },
 };
+
+
 export const Content00DataSource = {
   wrapper: { className: "home-page-wrapper content0-wrapper" },
   page: { className: "home-page content0" },
