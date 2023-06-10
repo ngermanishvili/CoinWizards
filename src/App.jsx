@@ -6,10 +6,10 @@ import "./App.css";
 import AnimatedRoutes from "./components/Animate/AnimatedRoutes";
 import Banner from "./components/Banner/Banner";
 import { Banner01DataSource } from "./data/data.source";
+import { Footer10DataSource } from "./data/data.source";
 
 const App = () => {
   const location = useLocation(); // Get the current location
-
   // Check if the current location is the homepage ("/")
   const isHomePage = location.pathname === "/";
 
@@ -18,11 +18,10 @@ const App = () => {
       <div className="navbar">
         <Navbar />
       </div>
-
-      {/* Render the Banner component only on the homepage */}
       {isHomePage && <Banner dataSource={Banner01DataSource} />}
 
       <div className="main">
+        {/* <Navbary dataSource={Nav00DataSource} /> */}
         <Layout>
           <div className="routes">
             <AnimatedRoutes />
