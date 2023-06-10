@@ -1,29 +1,25 @@
-import { Typography, Space } from "antd";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import SocLink from "../SocLink/SocLink";
+import React from "react";
+import styled from "styled-components";
+import { Layout, Menu } from "antd";
+
+const { Footer: AntFooter } = Layout;
+
+const StyledFooter = styled(AntFooter)`
+  background-color: #001529;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+`;
 
 const Footer = () => {
   return (
-    <div>
-      <Typography.Title
-        level={5}
-        style={{ color: "white", textAlign: "center" }}
-      >
-        Copyright © 2023
-        <div>
-          <Link to="/">CryptoWizards Inc.</Link> <br />
-          <br /> All Rights Reserved.
-        </div>
-      </Typography.Title>
-      <Space>
-        <div className="foot-pad">
-          <Link to="/">Home</Link>
-          <Link to="/exchanges">Exchanges</Link>
-          <Link to="/news">News</Link>
-        </div>
-        <SocLink />
-      </Space>
-    </div>
+    <StyledFooter>
+      <Menu mode="horizontal" theme="dark">
+        <Menu.Item key="home">Home</Menu.Item>
+        <Menu.Item key="about">About</Menu.Item>
+        <Menu.Item key="contact">Contact</Menu.Item>
+      </Menu>
+    </StyledFooter>
   );
 };
 
