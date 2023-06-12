@@ -38,7 +38,7 @@ const DictionaryPagination = () => {
   const getCurrentPage = () => {
     const pathSegments = location.pathname.split("/");
     const currentPage = parseInt(pathSegments[pathSegments.length - 1], 10);
-    return isNaN(currentPage) ? 2 : currentPage;
+    return isNaN(currentPage) ? 1 : currentPage;
   };
 
   return (
