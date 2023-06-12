@@ -4,6 +4,7 @@ import { useGetCryptoNewsQuery } from "../../services/CryptoNewsApi";
 import Loading from "../Loading/Loading";
 import moment from "moment";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
+import styled from "styled-components";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -22,6 +23,9 @@ const News = ({ simplified }) => {
   if (!cryptoNews?.value) return <Loading />;
 
   return (
+    <Wrapper>
+
+
     <Row gutter={[32, 32]}>
       {!simplified && (
         <Col span={24}>
@@ -87,7 +91,12 @@ const News = ({ simplified }) => {
         </Col>
       ))}
     </Row>
+    </Wrapper>
   );
 };
 
+
+const Wrapper = styled.div`
+margin-top: 50px;
+`
 export default News;
