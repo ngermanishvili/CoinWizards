@@ -104,7 +104,7 @@ export const Banner01DataSource = {
   textWrapper: { className: "banner0-text-wrapper" },
   title: {
     className: "banner0-title",
-    children: "https://i.ibb.co/PG53QN0/Group-1.png",
+    children: "https://i.ibb.co/KLkXvFk/CRYPTOWIZARDS.png ",
   },
   content: {
     className: "banner0-content",
