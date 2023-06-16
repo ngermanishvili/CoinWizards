@@ -23,7 +23,6 @@ a:hover {
 
 .main {
   width: 100%;
-  
 }
 .routes {
   padding: 20px;
@@ -454,6 +453,32 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.bubblediv {
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+  background-image: url('../src/components/images/futiristic3.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.bubbles-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  perspective: 1000px; /* Set the perspective for the 3D effect */
+}
+
+.bubbles-svg svg {
+  transform-style: preserve-3d; /* Enable 3D transformations */
+}
+
+.bubbles-svg .bubble-circle {
+  transform: translateZ(-50px); /* Apply a translation in the Z-axis to create depth */
 }
 
 
