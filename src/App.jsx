@@ -21,7 +21,7 @@ const App = () => {
 
       <div className="main">
         <Layout>
-          <div className="routes">
+          <div className={`routes ${isAboutPage ? "about" : ""}`}>
             <AnimatedRoutes />
           </div>
         </Layout>
