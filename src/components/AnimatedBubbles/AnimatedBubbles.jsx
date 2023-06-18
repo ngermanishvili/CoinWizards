@@ -11,7 +11,7 @@ const Bubbles = () => {
   const svgRef = useRef(null);
   const radiusScale = d3.scaleLinear().range([30, 70]);
 
-  const { data: cryptosData, isLoading } = useGetCryptosQuery(60, {
+  const { data: cryptosData, isLoading } = useGetCryptosQuery(100, {
     skip: typeof window === "undefined",
   });
 
@@ -21,26 +21,42 @@ const Bubbles = () => {
   };
 
   const getRandomSize = (price) => {
-    if (price > 6) {
-      return 40; // Large circle size for price change > 10%
+    if (price > 8) {
+      return 70; // Large circle size for price change > 8
+    } else if (price > 6) {
+      const size = 60 + (price - 6) * 2; // Increase circle size gradually from 60 to 70
+      return Math.round(size);
     } else if (price > 3) {
-      return 40; // Medium circle size for price change between 1% and 10%
-    } else if (price < -2) {
-      return 5;
+      const size = 45 + (price - 3) * 5; // Increase circle size gradually from 45 to 60
+      return Math.round(size);
+    } else if (price > 1) {
+      const size = 35 + (price - 1) * 5; // Increase circle size gradually from 35 to 45
+      return Math.round(size);
+    } else if (price === 0) {
+      return 20; // Circle size for price change = 0
+    } else if (price >= -4) {
+      const size = 15 + (price + 4) * 2.5; // Increase circle size gradually from 15 to 20
+      return Math.round(size);
+    } else if (price >= -6) {
+      const size = 10 + (price + 6) * 1.25; // Increase circle size gradually from 10 to 15
+      return Math.round(size);
     } else {
-      return 25; // Small circle size for price change < 1%
+      const size = 5 + (price + 6) * 1; // Increase circle size gradually from 5 to 10
+      return Math.round(size);
     }
   };
+
   useEffect(() => {
     if (cryptosData?.data?.coins) {
-      const newData = cryptosData.data.coins.slice(0, 60).map((coin) => ({
+      const screenWidth = window.innerWidth;
+      const newData = cryptosData.data.coins.slice(0, 100).map((coin) => ({
         color: getRandomColor(),
-        size: getRandomSize(),
-        x: Math.random() * window.innerWidth,
+        size: getRandomSize(coin.change, screenWidth),
+        x: Math.random() * screenWidth,
         y: Math.random() * window.innerHeight,
         price: coin.change,
         name: coin.symbol,
-        iconUrl: coin.iconUrl, // Add the iconUrl property to the data
+        iconUrl: coin.iconUrl,
       }));
       setData(newData);
       setIsDataLoaded(true);
@@ -51,8 +67,7 @@ const Bubbles = () => {
     const createBubbleChart = () => {
       const svg = d3.select(svgRef.current);
       const margin = { top: 70, right: 30, bottom: 30, left: 30 };
-      const width = window.innerWidth - margin.left - margin.right;
-      const height = window.innerHeight - margin.top - margin.bottom;
+      const { width, height } = svgRef.current.getBoundingClientRect();
 
       svg.attr("viewBox", `0 0 ${width} ${height}`);
 
@@ -129,14 +144,26 @@ const Bubbles = () => {
         .attr("alignment-baseline", "middle")
         .attr("fill", (d) => (d.price < 0 ? "red" : "green"))
         .style("pointer-events", "none")
-        .style("font-size", "28px");
+        .style("font-size", (d) => {
+          if (d.size < 20) {
+            return "14px"; // Set a smaller font size for small circles
+          } else {
+            return "24px"; // Use the default font size for larger circles
+          }
+        });
 
       texts
         .append("tspan")
         .text((d) => d.price + "%") // Add the price text
         .attr("text-anchor", "middle")
         .attr("alignment-baseline", "middle")
-        .style("font-size", "16px");
+        .style("font-size", (d) => {
+          if (d.size < 10) {
+            return "10px"; // Set a smaller font size for small circles
+          } else {
+            return "16px"; // Use the default font size for larger circles
+          }
+        });
 
       const moveCircles = () => {
         circles
@@ -161,9 +188,22 @@ const Bubbles = () => {
           .attr("xlink:href", (d) => d.iconUrl)
           .attr("x", (d) => d.x - radiusScale(d.size) / 4)
           .attr("y", (d) => d.y - radiusScale(d.size) / 2 - 15)
-          .attr("width", (d) => width / 60)
-          .attr("height", (d) => width / 60)
+          .attr("width", (d) => {
+            if (d.size < 20) {
+              return width / 80; // Set a smaller width for small circles
+            } else {
+              return width / 60; // Use the default width for larger circles
+            }
+          })
+          .attr("height", (d) => {
+            if (d.size < 25) {
+              return width / 80; // Set a smaller height for small circles
+            } else {
+              return width / 60; // Use the default height for larger circles
+            }
+          })
           .attr("preserveAspectRatio", "xMidYMid meet");
+
         texts
           .attr("x", (d) => d.x + 0)
           .attr("y", (d) => d.y + radiusScale(d.size) / 18);
