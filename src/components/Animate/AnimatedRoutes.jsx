@@ -23,17 +23,19 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence>
-      <Routes location={location}>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/exchanges" element={<Exchanges />} />
-        <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-        <Route path="/crypto/:coinId" element={<Cryptodetails />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/authorization" element={<Authorization />} />
-        <Route path="/dictionary" element={<Dictionary />} />
-        <Route path="/dictionary/:id" element={<Dictionary />} />
-      </Routes>
+      <div className={`routes${location.pathname === "/about" ? " about" : ""}`}>
+        <Routes location={location}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/exchanges" element={<Exchanges />} />
+          <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+          <Route path="/crypto/:coinId" element={<Cryptodetails />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/authorization" element={<Authorization />} />
+          <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/dictionary/:id" element={<Dictionary />} />
+        </Routes>
+      </div>
     </AnimatePresence>
   );
 };
