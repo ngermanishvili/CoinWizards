@@ -24,8 +24,13 @@ a:hover {
 .main {
   width: 100%;
 }
+
 .routes {
   padding: 20px;
+}
+
+.routes.about {
+  padding: 0;
 }
 
 .logo a {
@@ -455,17 +460,6 @@ a:hover {
   margin-top: 20px;
 }
 
-.bubblediv {
-  position: relative;
-  overflow: hidden;
-  margin-top: 50px;
-  background-image: url('../src/components/images/futiristic3.jpeg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
 .bubbles-svg {
   position: absolute;
   top: 0;
@@ -478,7 +472,7 @@ a:hover {
 }
 
 .bubbles-svg .bubble-circle {
-  transform: translateZ(-50px); /* Apply a translation in the Z-axis to create depth */
+  transform: translateZ(
+    -50px
+  ); /* Apply a translation in the Z-axis to create depth */
 }
-
-
