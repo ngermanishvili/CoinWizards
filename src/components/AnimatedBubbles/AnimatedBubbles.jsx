@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import Loading from "../Loading/Loading";
-import redImage from "../images/12.png";
-import greenImage from "../images/13.png";
 
 const Bubbles = () => {
   const [data, setData] = useState([]);
@@ -40,6 +38,10 @@ const Bubbles = () => {
     } else if (price >= -6) {
       const size = 10 + (price + 6) * 1.25; // Increase circle size gradually from 10 to 15
       return Math.round(size);
+    } else if (price > -5) {
+      return 60; // Circle size for price change > -5
+    } else if (price > -8) {
+      return 80; // Circle size for price change > -8
     } else {
       const size = 5 + (price + 6) * 1; // Increase circle size gradually from 5 to 10
       return Math.round(size);
