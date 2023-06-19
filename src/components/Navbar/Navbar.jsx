@@ -79,6 +79,7 @@ function Navbar() {
           </div>
         </div>
       </header>
+      
     </Wrapper>
   );
 }
@@ -156,7 +157,9 @@ z-index: 100;
   ,
   .header__content__nav ul li a {
     font-size: 14px;
-   color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+   border-bottom: 2px solid transparent;
+   color: #1cbecc;
     margin-left: 46px;
     padding: 0 8px;
     text-decoration: none;
@@ -240,16 +243,19 @@ z-index: 100;
       margin-bottom: 0;
       margin-right: 16px;
     }
+    .header__content__nav ul li a {
+      color: #fff;
+    }
 
     .header__content__toggle {
       display: none;
       position: absolute;
-      
     }
   .navbar{
    display: flex;
   }
   }
+
 `;
 
 export default Navbar;
