@@ -7,6 +7,7 @@ import { isImg } from "../utils/utils";
 import styled from "styled-components";
 import Cards from "../Cards/Cards";
 
+
 const Banner = (props) => {
   const { dataSource, ...currentProps } = props;
   delete currentProps.dataSource;
@@ -52,7 +53,6 @@ const Banner = (props) => {
       >
         <DownOutlined />
       </TweenOne>
-      \
     </Wrapper>
   );
 };
