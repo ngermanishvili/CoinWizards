@@ -1,7 +1,6 @@
 import React from "react";
 import Bubbles from "../AnimatedBubbles/AnimatedBubbles"; // Import the Bubbles component
 import styled from "styled-components";
-import { Card, Col, Row, Statistic } from "antd";
 
 const About = () => {
   // About page content
@@ -18,11 +17,11 @@ const About = () => {
 
 const Wrapper = styled.div`
   .bubblediv {
-    margin-top: 31px;
+    margin-top: 50px;
     width: 100%;
     height: 800px;
     position: relative;
-    background: #261e35;
+    background: #1a1a1a;
   }
 
   @media screen and (max-width: 800px) {
