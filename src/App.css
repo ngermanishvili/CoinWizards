@@ -325,6 +325,7 @@ a:hover {
 }
 .crypto-card-container {
   min-height: 65vh !important;
+  margin-top: 50px !important;
 }
 .crypto-card {
   min-width: 250px;
@@ -445,12 +446,8 @@ a:hover {
 }
 
 .carus {
-  max-width: 1950px;
+  max-width: 1600px;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .auth-title {
