@@ -9,7 +9,6 @@ const Dictionary = () => {
   const { id } = useParams();
   const [currentPage, setCurrentPage] = useState(id ? parseInt(id, 10) : 1);
   const [data, setData] = useState([]);
-
   const pageSize = 15;
 
   useEffect(() => {
