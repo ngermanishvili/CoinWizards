@@ -56,7 +56,7 @@ const Cards = () => (
 );
 
 const Wrapper = styled.div`
-  margin-bottom: 300px;
+  margin-bottom: 100px;
   padding: 16px;
 `;
 
