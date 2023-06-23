@@ -18,7 +18,6 @@ const App = () => {
         <Navbar />
       </div>
       {isHomePage && <Banner dataSource={Banner01DataSource} />}
-
       <div className="main">
         <Layout>
           <div className={`routes ${isAboutPage ? "about" : ""}`}>
