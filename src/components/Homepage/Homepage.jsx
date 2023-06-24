@@ -1,22 +1,19 @@
 import React from "react";
 import millify from "millify";
 import { Typography, Row, Col, Statistic, Card } from "antd";
-import { Link } from "react-router-dom";
+
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 const { Title } = Typography;
 import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
-import News from "../News/News";
+
 import Box from "../Animate/Box";
 import Loading from "../Loading/Loading";
-import Stats from "../Stats/Stats";
+
 import { Stats2, Stats3 } from "../Stats/Stats";
-import Owl from "../Carousel/Carousel";
-import ProgressBar from "../ProgressBar/ProgressBar";
+
 import styled from "styled-components";
 import Cards from "../Cards/Cards";
-
-import Banner from "../Banner/Banner";
-import { Banner01DataSource } from "../../data/data.source";
+import GifCard from "../GifCard/GifCard";
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -29,12 +26,11 @@ const Homepage = () => {
     <>
       {/* // *? Cryptocurrencies section */}
       {/* <Banner dataSource={Banner01DataSource}  /> */}
-      <Wrapper>
-        <Title level={2} className="home-title2">
-          გაიარე კონსულტაცია და შეიძინე კრიპტო სიგნალები ყველაზე დაბალ ფასად !
-        </Title>
 
-        <Cards />
+      <Wrapper>
+        {/* <Title level={2} className="home-title2">
+          გაიარე კონსულტაცია და შეიძინე კრიპტო სიგნალები ყველაზე დაბალ ფასად !
+        </Title> */}
 
         <div className="home-heading-container">
           <Title level={2} className="home-title">
@@ -74,6 +70,7 @@ const Homepage = () => {
           </Col>
           <Box />
         </Row>
+        <GifCard />
 
         <Cryptocurrencies simplified={true} />
       </Wrapper>
@@ -86,6 +83,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 80px;
   }
 
   .home-title {
