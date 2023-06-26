@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     position: relative;
     background: #1a1a1a;
   }
-
+//
   @media screen and (max-width: 800px) {
     .bubblediv {
       width: 100%;
