@@ -14,7 +14,7 @@ const Bubbles = () => {
   });
 
   const getRandomColor = () => {
-    const colors = ["red", "green"];
+    const colors = ["red", "#90EE90"];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
@@ -88,7 +88,7 @@ const Bubbles = () => {
 
       const colorScale = d3
         .scaleOrdinal()
-        .range((d) => (d.price < 0 ? ["red"] : ["green"]))
+        .range((d) => (d.price < 0 ? ["red"] : ["#90EE90"]))
         .domain(data.map((d) => d.color));
 
       svg.select(".bubbles").remove();
@@ -144,7 +144,7 @@ const Bubbles = () => {
         .text((d) => `${d.name}`)
         .attr("text-anchor", "middle")
         .attr("alignment-baseline", "middle")
-        .attr("fill", (d) => (d.price < 0 ? "red" : "green"))
+        .attr("fill", (d) => (d.price < 0 ? "red" : "#2bed2b"))
         .style("pointer-events", "none")
         .style("font-size", (d) => {
           if (d.size < 20) {
@@ -156,7 +156,7 @@ const Bubbles = () => {
 
       texts
         .append("tspan")
-        .text((d) => d.price + "%") // Add the price text
+        .text((d) => "+" + d.price + "%") // Add the price text with a plus sign
         .attr("text-anchor", "middle")
         .attr("alignment-baseline", "middle")
         .style("font-size", (d) => {
