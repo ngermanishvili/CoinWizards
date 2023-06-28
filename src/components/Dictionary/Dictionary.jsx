@@ -10,7 +10,7 @@ const Dictionary = () => {
   const [currentPage, setCurrentPage] = useState(id ? parseInt(id, 10) : 1);
   const [data, setData] = useState([]);
   const pageSize = 15;
-
+//
   useEffect(() => {
     const fetchData = () => {
       const startIndex = (currentPage - 1) * pageSize;
