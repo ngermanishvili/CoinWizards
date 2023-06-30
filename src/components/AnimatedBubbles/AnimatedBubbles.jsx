@@ -153,7 +153,7 @@ const Bubbles = () => {
             return "24px"; // Use the default font size for larger circles
           }
         });
-//
+
       texts
         .append("tspan")
         .text((d) => "+" + d.price + "%") // Add the price text with a plus sign
