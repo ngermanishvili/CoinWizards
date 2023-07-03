@@ -11,7 +11,7 @@ const App = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isAboutPage = location.pathname === "/about";
-
+//
   
   return (
     <div className="app">
