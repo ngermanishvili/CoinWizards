@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import Loading from "../Loading/Loading";
-import Owl from "../Carousel/Carousel";
-import GifCard from "../GifCard/GifCard";
+
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -19,7 +18,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const filteredCryptos = cryptos.filter((crypto) =>
     crypto.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
+//
   return (
     <>
       {!simplified && (

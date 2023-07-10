@@ -12,8 +12,6 @@ import Loading from "../Loading/Loading";
 import { Stats2, Stats3 } from "../Stats/Stats";
 
 import styled from "styled-components";
-import Cards from "../Cards/Cards";
-import GifCard from "../GifCard/GifCard";
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -70,7 +68,7 @@ const Homepage = () => {
           </Col>
           <Box />
         </Row>
-        <GifCard />
+        {/* <GifCard /> */}
 
         <Cryptocurrencies simplified={true} />
       </Wrapper>
