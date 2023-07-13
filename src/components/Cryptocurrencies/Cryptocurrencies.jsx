@@ -5,7 +5,7 @@ import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import Loading from "../Loading/Loading";
 
-//
+
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
