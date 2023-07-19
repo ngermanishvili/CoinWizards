@@ -27,7 +27,7 @@ const App = () => {
         </Layout>
         <div className="footer">
           <Footer />
-          //
+          
         </div>
       </div>
     </div>
