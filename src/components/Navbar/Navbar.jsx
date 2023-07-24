@@ -76,10 +76,10 @@ function Navbar() {
             ) : (
               <AiOutlineClose onClick={menuToggleHandler} />
             )}
+            //
           </div>
         </div>
       </header>
-      
     </Wrapper>
   );
 }
@@ -91,7 +91,7 @@ const Wrapper = styled.div`
  z-index: 1;
  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
   position: relative;
-  top: 0; */
+  top: 0; 
   }
   .logo {
     display: inline-block;
@@ -102,7 +102,7 @@ z-index: 100;
    width: 160px;
    line-height: 70px;
   }
-  ,
+  
 
   .header__content {
     overflow: hidden;
